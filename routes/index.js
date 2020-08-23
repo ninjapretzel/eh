@@ -1,4 +1,4 @@
-const quickdraw = using("/lib/quickdraw");
+const quickdraw = using("lib/quickdraw");
 
 const Router = require("koa-router");
 const router = new Router();
