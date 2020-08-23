@@ -62,6 +62,12 @@ $> npm -v
 $> sudo npm i -g nodemon
 $> sudo npm i -g pm2
 ```
+### Yarn
+```c
+$> curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+$> echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+$$ sudo apt update && sudo apt install yarn
+```
 
 ### MongoDB
 ```c
@@ -95,3 +101,7 @@ $> mongo --eval 'db.runCommand({ connectionStatus: 1 })'
 ```c
 $> cd ~
 $> git clone https://github.com/ninjapretzel/eh.git
+$> cd eh
+$> yarn
+$> sudo nodemon app.js
+```
