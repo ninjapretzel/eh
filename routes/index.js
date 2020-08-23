@@ -14,10 +14,7 @@ quickdraw(__filename, (rt, path, err) => {
 
 router.get("/", async (ctx) => {
 	ctx.data.yes="no";
-	console.log(ctx.data);
-	
 	await ctx.template("index");
-	
 })
 
 module.exports = router;
