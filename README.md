@@ -1,2 +1,6 @@
-# eh
-eh
+# `eh`
+eh?
+
+## Usage
+[VM setup](./azureSetup.md)
+
