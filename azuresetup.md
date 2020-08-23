@@ -103,5 +103,11 @@ $> cd ~
 $> git clone https://github.com/ninjapretzel/eh.git
 $> cd eh
 $> yarn
+
+// (if doing development, do the following:)
+$> touch .dev
+// (This lets the application know it is a development environment, and will run on localhost.)
+
 $> sudo nodemon app.js
 ```
+
