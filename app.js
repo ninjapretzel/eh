@@ -3,6 +3,11 @@ const fs_ = require("fs");
 const fs = require("fs-promise-native");
 const IS_DEV = fs_.existsSync("./.dev");
 
+// !ATCHUNG!: Extremely hacky stuff.
+// This makes any code using `using()` only work in this application.
+global.using = require('app-root-path').require;
+const DUCKPUNCHED = require("./duckpunches");
+// console.log("Duckpunches: ", DUCKPUNCHED);
 
 // Package dependencies
 const Koa = require('koa');
@@ -22,12 +27,18 @@ const HTTPS = false;
 const app = new Koa();
 app.use(bodyParser());
 app.use(static("public"));
-app.use(layout("main"));
+app.use(layout("main", "hbs"));
 
 app.use(views(`${__dirname}/views`,
-	{ extension: "handlebars" },
-	{ map: { handlebars: "handlebars" } }
+	{ 
+		extension: "hbs",
+		map: { hbs: "handlebars" }
+	}
 ))
+
+const router = require("./routes");
+app.router(router);
+
 
 async function main() {
 	

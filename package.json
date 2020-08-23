@@ -1,10 +1,12 @@
 {
   "dependencies": {
     "@koa/router": "^9.4.0",
+    "app-root-path": "^3.0.0",
     "fs-promise-native": "^2.0.1",
     "handlebars": "^4.7.6",
     "koa": "^2.13.0",
     "koa-bodyparser": "^4.3.0",
+    "koa-router": "^9.4.0",
     "koa-static": "^5.0.0",
     "koa-views": "^6.3.0"
   }
