@@ -2,5 +2,5 @@
 eh?
 
 ## Usage
-[VM setup](./azureSetup.md)
+[VM setup](./azuresetup.md)
 
