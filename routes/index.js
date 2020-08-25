@@ -6,9 +6,9 @@ const router = new Router();
 quickdraw(__filename, (rt, path, err) => {
 	if (!err) {
 		// console.log(`Hooked up router: [${path}]`);
-		router.nest(path, rt);
+		router.nest("/"+path, rt);
 	} else {
-		console.log(`Failed to load router: [${path}]`);
+		console.log(`Failed to load router: [${path}]`, err);
 	}
 });
 

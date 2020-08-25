@@ -1,13 +1,15 @@
+// !ATCHUNG!: Extremely hacky stuff.
+// This makes any code using `using()` only work in this application.
+global.using = require('app-root-path').require;
+global.sneak = using("lib/sneak");
+
+const DUCKPUNCHED = require("./duckpunches");
+// console.log("Duckpunches: ", DUCKPUNCHED);
+
 // Static setup + Builtin dependencies
 const fs_ = require("fs");
 const fs = require("fs-promise-native");
 const IS_DEV = fs_.existsSync("./.dev");
-
-// !ATCHUNG!: Extremely hacky stuff.
-// This makes any code using `using()` only work in this application.
-global.using = require('app-root-path').require;
-const DUCKPUNCHED = require("./duckpunches");
-// console.log("Duckpunches: ", DUCKPUNCHED);
 
 // Package dependencies
 const Koa = require('koa');
