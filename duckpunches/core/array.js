@@ -1,5 +1,5 @@
 Object.defineProperty(Array.prototype, "last", { get: function() { return this[this.length-1]; } } );
-Object.defineProperty(Array.prototype, "choose", { value: function() { const pick = Math.floor(Random.value() * this.length); return this[pick]; } } );
+Object.defineProperty(Array.prototype, "choose", { value: function() { const pick = Math.floor(Random.value * this.length); return this[pick]; } } );
 
 
 // Verify: 
