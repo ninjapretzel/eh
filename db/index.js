@@ -18,9 +18,13 @@ quickdraw(__filename, (schema, file, err) => {
 	const slash = file.lastIndexOf("/");
 	const shortName = (slash > 0) ? file.substring(slash+1) : file;
 	
-	const model = mongoose.model(shortName, schema);
-	db.schemas[shortName] = schema;
-	db[shortName] = model;
+	try {
+		const model = mongoose.model(shortName, schema);
+		db.schemas[shortName] = schema;
+		db[shortName] = model;
+	} catch (err) {
+		console.log("error converting", shortName, "to schema/model.", err, "\nSkipping", shortName);
+	}	
 });
 console.log(Object.keys(db.schemas));
 
