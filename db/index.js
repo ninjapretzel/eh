@@ -15,10 +15,13 @@ const db = {
 
 quickdraw(__filename, (schema, file, err) => {
 	if (err) { throw err; }
-	const model = mongoose.model(file, schema);
-	db.schemas[file] = schema;
-	db[file] = model;
+	const slash = file.lastIndexOf("/");
+	const shortName = (slash > 0) ? file.substring(slash+1) : file;
+	
+	const model = mongoose.model(shortName, schema);
+	db.schemas[shortName] = schema;
+	db[shortName] = model;
 });
-//console.log(db);
+console.log(Object.keys(db.schemas));
 
 module.exports = db;

@@ -8,6 +8,8 @@ const UserAccountCreation = new Schema({
 	creation: { type: Boolean, required: "LoginAttempt must record creation status"  },
 	result: { type: Number, required: "LoginAttempt must record result enum"  },
 	result_desc: { type: String, required: "LoginAttempt must record result description"  },
+	guid: { type: String }, //Optional, user guid if login was successful.
+	pass: { type: String }, // Optional, if password did not match db.
 	timestamp: { type: Date, default: ()=>new Date() }, 
 });
 
