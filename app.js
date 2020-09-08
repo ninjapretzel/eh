@@ -1,11 +1,3 @@
-// !ATCHUNG!: Extremely hacky stuff.
-// This makes any code using `using()` only work in this application.
-global.using = require('app-root-path').require;
-global.sneak = using("lib/sneak");
-
-const DUCKPUNCHED = require("./duckpunches");
-// console.log("Duckpunches: ", DUCKPUNCHED);
-
 // Static setup + Builtin dependencies
 const fs_ = require("fs");
 const fs = require("fs-promise-native");
@@ -39,6 +31,8 @@ app.use(views(`${__dirname}/views`,
 ))
 
 const router = require("./routes");
+const { isArray, isObject } = require('util');
+const { Console } = require('console');
 app.router(router);
 
 
